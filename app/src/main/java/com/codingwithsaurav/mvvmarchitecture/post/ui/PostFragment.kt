@@ -34,13 +34,15 @@ class PostFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        postViewModel.postStatus.observe(viewLifecycleOwner) {
-            binding?.progressBar?.isVisible = it.isLoading
-            if (it.data.isNullOrEmpty().not()) {
-                postList = it.data!!
-                adapter = PostAdapter(it.data!!)
-                binding?.postRV?.adapter = adapter
-                adapter?.notifyDataSetChanged()
+        postViewModel.postStatus.observe(viewLifecycleOwner) { result ->
+            result?.let {
+                binding?.progressBar?.isVisible = it.isLoading
+                if (it.data.isNullOrEmpty().not()) {
+                    postList = result?.data
+                    adapter = PostAdapter(result?.data)
+                    binding?.postRV?.adapter = adapter
+                    adapter?.notifyDataSetChanged()
+                }
             }
         }
 
