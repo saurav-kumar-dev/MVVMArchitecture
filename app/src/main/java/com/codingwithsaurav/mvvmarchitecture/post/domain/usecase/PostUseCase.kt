@@ -18,9 +18,9 @@ class PostUseCase @Inject constructor(
             val result = postRepository.getPosts()
             emit(NetworkResult.Success<PostResponse>(result))
         } catch (e: HttpException) {
-            emit(NetworkResult.Error<PostResponse>(data = null, message = e.localizedMessage))
+            emit(NetworkResult.Error<PostResponse>(errorMessage = e.localizedMessage))
         } catch (e: IOException) {
-            emit(NetworkResult.Error<PostResponse>(data = null, message = e.localizedMessage))
+            emit(NetworkResult.Error<PostResponse>(errorMessage = e.localizedMessage))
         }
     }
 

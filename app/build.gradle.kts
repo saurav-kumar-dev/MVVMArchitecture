@@ -64,6 +64,11 @@ dependencies {
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    //Sdp
+    implementation("com.intuit.sdp:sdp-android:1.1.0")
+    //ssp
+    implementation("com.intuit.ssp:ssp-android:1.1.0")
+    implementation("com.karumi:dexter:6.2.3")
 }
 kapt {
     correctErrorTypes = true

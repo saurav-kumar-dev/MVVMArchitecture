@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="AlertDialogTheme" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@drawable/alert_dialog_bg</item>
+    </style>
+
+    <style name="TransparentBackgroundBottomSheetTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/TransparentBackgroundBottomSheetStyle</item>
+    </style>
+
+    <style name="TransparentBackgroundBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="MediumTextView" parent="ThemeOverlay.AppCompat.DayNight">
+        <item name="android:paddingStart">@dimen/_10sdp</item>
+        <item name="android:paddingEnd">@dimen/_10sdp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

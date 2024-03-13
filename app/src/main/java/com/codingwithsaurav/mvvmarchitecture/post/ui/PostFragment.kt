@@ -37,7 +37,7 @@ class PostFragment : Fragment() {
         postViewModel.postStatus.observe(viewLifecycleOwner) { result ->
             result?.let {
                 binding?.progressBar?.isVisible = it.isLoading
-                if (it.data.isNullOrEmpty().not()) {
+                result?.data?.let {
                     postList = result?.data
                     adapter = PostAdapter(result?.data)
                     binding?.postRV?.adapter = adapter
@@ -45,8 +45,8 @@ class PostFragment : Fragment() {
                 }
             }
         }
+        postViewModel.getPostList()
 
-        postViewModel.getPosts()
     }
 
 }
